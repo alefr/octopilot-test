@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pipeline-lab
-  namespace: demo-staging
+  namespace: demo
 spec:
   chart:
     spec:
@@ -27,18 +27,18 @@ spec:
     imagePullSecrets: []
     ingress:
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-prod
         kubernetes.io/ingress.allow-http: "false"
         kubernetes.io/ingress.class: nginx
       enabled: true
       hosts:
-      - host: pipeline-labs.staging.visegue.se
+      - host: pipeline-labs.visegue.se
         paths:
         - path: /
           pathType: ImplementationSpecific
       tls:
       - hosts:
-        - pipeline-labs.staging.visegue.se
+        - pipeline-labs.visegue.se
         secretName: pipeline-labs-tls
     livenessProbe:
       httpGet:
