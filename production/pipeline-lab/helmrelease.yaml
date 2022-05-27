@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pipeline-lab
-  namespace: demo
+  namespace: public-apps
 spec:
   chart:
     spec:
