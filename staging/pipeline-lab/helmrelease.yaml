@@ -23,7 +23,7 @@ spec:
     fullnameOverride: ""
     image:
       pullPolicy: IfNotPresent
-      repository: harbor.visegue.se/visegue-pipeline
+      repository: harbor.visegue.se/visegue-public
     imagePullSecrets: []
     ingress:
       annotations:
