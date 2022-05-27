@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: visegue-public
+  namespace: public-apps-staging
+spec:
+  interval: 30m
+  url: https://harbor.visegue.se/chartrepo/visegue-public
