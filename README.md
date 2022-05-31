@@ -3,12 +3,12 @@ Public application definition repository, for adding public applications to a gi
 
 ## Environments
 
-There are currently to tracked environments: `/staging/` and `production`.
-Prepared for `preview` environments but that is currently unused, and not sure it will be a gitops setup.
+There are currently two tracked environments: `/staging` and `/production`.
+The repo is prepared for preview enviroments, but but that is currently unused, and not sure if it will be a gitops setup (or at least through this repo).
 
 At the time of writing implicit `kustomization` is used through flux.
 Meaning all files in each folder will be added to the cluster, they need to be valid `kubernetes` manifests (include `CRDs`).
-Thus no base wich patches apples (as stated as good practice in flux demos).
+Thus there's no base with corresponding patches for each environment (as stated as good practice in flux demos).
 Merging of files are currently offhanded to other pipelines which copies complete files to this repo.
 
 That is the reason you migh find what appears to be "duplicate" files in the repo.
