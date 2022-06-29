@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: visegue-public
-      version: v1.2.0-next.1
+      version: 1.0.0
   interval: 10m0s
   values:
     affinity: {}
@@ -34,14 +34,14 @@ spec:
         kubernetes.io/ingress.class: nginx
       enabled: true
       hosts:
-      - host: pipeline-labs.staging.visegue.se
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
+        - host: pipeline-labs.staging.visegue.se
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
       tls:
-      - hosts:
-        - pipeline-labs.staging.visegue.se
-        secretName: pipeline-labs-tls
+        - hosts:
+            - pipeline-labs.staging.visegue.se
+          secretName: pipeline-labs-tls
     livenessProbe:
       httpGet:
         path: /
@@ -51,9 +51,9 @@ spec:
     podAnnotations: {}
     podSecurityContext: {}
     ports:
-    - containerPort: 3000
-      name: http
-      protocol: TCP
+      - containerPort: 3000
+        name: http
+        protocol: TCP
     readinessProbe:
       httpGet:
         path: /
@@ -75,4 +75,3 @@ spec:
       create: true
       name: visegue-public
     tolerations: []
-
